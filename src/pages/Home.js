@@ -4,23 +4,12 @@ import axios from "axios";
 const Home = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const headers = {
-    "Content-Type": "application/json;charset=UTF-8",
-    "Access-Control-Allow-Origin":
-      "https://laetitia-marvel-project.netlify.app/",
-    "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, OPTIONS",
-    "Access-Control-Allow-Headers": "*",
-  };
 
   useEffect(() => {
     try {
       const fetchDatas = async () => {
         const response = await axios.get(
-          "https://laetitia-marvel-project.herokuapp.com/",
-          {
-            mode: "cors",
-            headers: headers,
-          }
+          "https://laetitia-marvel-project.herokuapp.com/"
         );
         console.log(response.data);
         setData(response.data);
