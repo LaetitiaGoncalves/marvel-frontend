@@ -4,12 +4,23 @@ import axios from "axios";
 const Home = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const headers = {
+    "Content-Type": "application/json;charset=UTF-8",
+    "Access-Control-Allow-Origin":
+      "https://laetitia-marvel-project.netlify.app/",
+    "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "*",
+  };
 
   useEffect(() => {
     try {
       const fetchDatas = async () => {
         const response = await axios.get(
-          "https://git.heroku.com/laetitia-marvel-project.git"
+          "https://git.heroku.com/laetitia-marvel-project.git",
+          {
+            mode: "cors",
+            headers: headers,
+          }
         );
         console.log(response.data);
         setData(response.data);
