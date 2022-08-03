@@ -16,7 +16,7 @@ const Home = () => {
     try {
       const fetchDatas = async () => {
         const response = await axios.get(
-          "https://git.heroku.com/laetitia-marvel-project.git",
+          "https://laetitia-marvel-project.herokuapp.com/",
           {
             mode: "cors",
             headers: headers,
