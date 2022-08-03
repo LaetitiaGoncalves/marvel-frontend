@@ -9,7 +9,7 @@ const Home = () => {
     try {
       const fetchDatas = async () => {
         const response = await axios.get(
-          "https://laetitia-marvel-project.herokuapp.com/"
+          "https://laetitia-marvel-project.herokuapp.com/comics"
         );
         console.log(response.data);
         setData(response.data);
