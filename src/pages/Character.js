@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
 import axios from "axios";
+import { useState, useEffect } from "react";
 
-const Comic = () => {
+const Character = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -9,7 +9,7 @@ const Comic = () => {
     try {
       const fetchDatas = async () => {
         const response = await axios.get(
-          "https://laetitia-marvel-project.herokuapp.com/comics"
+          "https://laetitia-marvel-project.herokuapp.com/characters"
         );
         setData(response.data);
         setIsLoading(false);
@@ -26,8 +26,8 @@ const Comic = () => {
         <h2>En cours de chargement</h2>
       ) : (
         <div className="comics-page">
-          {data.results.map((comics) => {
-            return <p key={comics._id}>{comics.title}</p>;
+          {data.results.map((characters) => {
+            return <p key={characters._id}>{characters.name}</p>;
           })}
         </div>
       )}
@@ -35,4 +35,4 @@ const Comic = () => {
   );
 };
 
-export default Comic;
+export default Character;
