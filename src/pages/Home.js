@@ -1,16 +1,18 @@
-import { Link } from "react-router-dom";
+import spiderman from "../img/spiderman.jpg";
 
 const Home = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
-
-      <Link to="/comics">
-        <button>comics</button>
-      </Link>
-      <Link to="/characters">
-        <button>characters</button>
-      </Link>
+    <div className="homepage">
+      <img
+        src={spiderman}
+        alt="spiderman photo"
+        className="spiderman-homepage"
+      />
+      <div className="container">
+        <h1 className="homepage-title">
+          With great power comes great responsibility
+        </h1>
+      </div>
     </div>
   );
 };

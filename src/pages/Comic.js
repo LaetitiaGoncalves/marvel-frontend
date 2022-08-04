@@ -27,7 +27,17 @@ const Comic = () => {
       ) : (
         <div className="comics-page">
           {data.results.map((comics) => {
-            return <p key={comics._id}>{comics.title}</p>;
+            return (
+              <ul key={comics._id}>
+                <li>
+                  {comics.map((photos) => {
+                    return <div>{photos.thumbnail}</div>;
+                  })}
+                </li>
+                <li>{comics.title}</li>
+                <li>{comics.description}</li>
+              </ul>
+            );
           })}
         </div>
       )}
