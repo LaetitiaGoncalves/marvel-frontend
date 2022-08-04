@@ -30,7 +30,12 @@ const Comic = () => {
             return (
               <ul key={comics._id}>
                 <li>
-                  <img src={comics.thumbnail.path} alt="comics photos" />
+                  <img
+                    src={
+                      comics.thumbnail.path + "." + comics.thumbnail.extension
+                    }
+                    alt="comics photos"
+                  />
                 </li>
                 <li>{comics.title}</li>
                 <li>{comics.description}</li>
