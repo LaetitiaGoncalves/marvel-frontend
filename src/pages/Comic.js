@@ -30,9 +30,7 @@ const Comic = () => {
             return (
               <ul key={comics._id}>
                 <li>
-                  {comics.map((photos) => {
-                    return <div>{photos.thumbnail}</div>;
-                  })}
+                  <img src={comics.thumbnail.path} alt="comics photos" />
                 </li>
                 <li>{comics.title}</li>
                 <li>{comics.description}</li>
