@@ -47,7 +47,7 @@ const Comic = () => {
                       src={
                         comics.thumbnail.path + "." + comics.thumbnail.extension
                       }
-                      alt="comics photos"
+                      alt=""
                     />
                   </p>
                   <div className="card-text">
