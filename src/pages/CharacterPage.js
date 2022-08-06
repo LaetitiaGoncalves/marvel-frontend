@@ -6,12 +6,12 @@ const CharacterPage = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { characterId } = useParams();
-  console.log(characterId);
+
   useEffect(() => {
     try {
       const fetchDatas = async () => {
         const response = await axios.get(
-          `https://localhost:3000/characters/${characterId}`
+          `https://laetitia-marvel-project.herokuapp.com/character/${characterId}`
         );
         setData(response.data);
         console.log(response.data);

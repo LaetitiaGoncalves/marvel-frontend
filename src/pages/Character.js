@@ -8,15 +8,6 @@ const Character = () => {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
-  const handleClick = async (event) => {
-    try {
-      event.preventDefault();
-      navigate("/characters/:characterId");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     try {
       const fetchDatas = async () => {
@@ -26,6 +17,7 @@ const Character = () => {
         setData(response.data);
         setIsLoading(false);
       };
+
       fetchDatas();
     } catch (error) {
       console.log(error.message);
@@ -50,7 +42,10 @@ const Character = () => {
               return (
                 <div
                   key={characters._id}
-                  onClick={handleClick}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    navigate(`/character/${characters._id}`);
+                  }}
                   className="card"
                 >
                   <p className="image-contain">
