@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import comicspicture from "../img/comicspicture.png";
 
 const Comic = () => {
   const [data, setData] = useState(null);
@@ -24,15 +25,23 @@ const Comic = () => {
       {isLoading === true ? (
         <h2>En cours de chargement</h2>
       ) : (
-        <div className="comics-page">
+        <div className="pages-container">
           <div className="search-bar-input">
-            <input type="text" placeholder="Search here" value="" />
+            <input type="text" placeholder="Search here" />
           </div>
-          <h1>Découvrez l'univers des comics Marvel</h1>
+          <div className="title-and-picture">
+            <h1>Découvrez l'univers des comics Marvel</h1>
+            <img
+              src={comicspicture}
+              alt="comics picture"
+              className="comicspicture"
+            />
+          </div>
+
           <div className="container-card">
             {data.results.map((comics) => {
               return (
-                <div key={comics._id} className="comics-card">
+                <div key={comics._id} className="card">
                   <p className="image-contain">
                     <img
                       src={
@@ -41,7 +50,7 @@ const Comic = () => {
                       alt="comics photos"
                     />
                   </p>
-                  <div className="comics-card-text">
+                  <div className="card-text">
                     <p>{comics.title}</p>
                     <p>{comics.description}</p>
                   </div>
