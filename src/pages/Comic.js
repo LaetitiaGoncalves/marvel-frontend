@@ -31,11 +31,7 @@ const Comic = () => {
           </div>
           <div className="title-and-picture">
             <h1>Découvrez l'univers des comics Marvel</h1>
-            <img
-              src={comicspicture}
-              alt="comics picture"
-              className="comicspicture"
-            />
+            <img src={comicspicture} alt="comics" className="comicspicture" />
           </div>
 
           <div className="container-card">
