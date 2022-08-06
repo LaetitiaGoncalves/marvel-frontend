@@ -3,11 +3,7 @@ import spiderman from "../img/spiderman.jpg";
 const Home = () => {
   return (
     <div className="homepage">
-      <img
-        src={spiderman}
-        alt="spiderman photo"
-        className="spiderman-homepage"
-      />
+      <img src={spiderman} alt="spiderman" className="spiderman-homepage" />
       <div className="container">
         <h1 className="homepage-title">
           With great power comes great responsibility

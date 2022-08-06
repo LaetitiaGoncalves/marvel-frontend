@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header>
-      <Link to="/">
-        <img src={logo} alt="logo Marvel" className="logo" />
-      </Link>
+    <header className="container">
+      <div className="logo">
+        <Link to="/">
+          <img src={logo} alt="logo Marvel" className="logo" />
+        </Link>
+      </div>
 
       <div>
         <Link to="/comics">
-          <button>comics</button>
+          <button className="button-comics">comics</button>
         </Link>
         <Link to="/characters">
-          <button>characters</button>
+          <button className="button-characters">characters</button>
         </Link>
       </div>
     </header>

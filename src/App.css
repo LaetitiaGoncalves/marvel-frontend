@@ -1,6 +1,17 @@
-.logo {
-    width: 120px;
+
+body {
+    background: linear-gradient(90deg, rgba(2,2,2,1) 0%, rgba(74,3,4,1) 100%);
 }
+
+.logo {
+    width: 220px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
 
 header {
     background-color: transparent;
@@ -9,14 +20,57 @@ header {
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
-    padding-bottom: 200px;
+   
 }
+
+
+header .button-comics{
+    font-family: 'Oswald', sans-serif;
+    background-color: transparent;
+    font-weight: 400;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;   
+    text-transform: uppercase;
+    border-right: 2px solid #ED1C24;
+    text-align: center;  
+    padding: 0px 20px;
+   
+ 
+}
+
+header .button-characters{
+    font-family: 'Oswald', sans-serif;
+    background-color: transparent;
+    font-weight: 400;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;   
+    padding: 0px 21px 0px 13px;
+    text-transform: uppercase;
+    text-align: center; 
+}
+
+header button:hover{
+   color: #ED1C24;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Homepage */
 
 .spiderman-homepage {
 width: 100vw;
 position: absolute;
 z-index: -1;
-top: 0;
+top: 0; 
+
 }
 
 .homepage-title {
@@ -27,9 +81,92 @@ top: 0;
     text-shadow: 0 0 10px  #030303;
     text-transform: uppercase;
     text-align: center;
+    padding-top: 200px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+
+/* Page Comics */
+
+.comics-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1,h2,p {
+    color: white;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    margin: 50px 50px;
+}
+
+p {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+.search-bar-input {
+    display: flex;
+    justify-content: center;
+    margin: 25px 25px;
+}
+
+.search-bar-input input {
+    background-color: transparent;
+    border: solid 2px #CD1426;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.container-card {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.comics-card {
+    display: flex;
+    width: 500px;
+    border: 2px solid #CD1426;
+    margin: 20px 20px ;
+    padding: 20px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+
+}
+
+.comics-card:hover {
+    background-color: rgba(212, 2, 2, 0.4);
+    border: solid 2px  rgba(212, 2, 2, 0);
+ 
+}
+
+.image-contain {
+    display: flex;
+    justify-content: center;
+
+}
+
+.comics-card img {
+    width: 200px;
+   object-fit: contain;
+}
+
+.comics-card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 30px;
+}
+
+.comics-card-text p {
+    margin-bottom: 20px;
 }
