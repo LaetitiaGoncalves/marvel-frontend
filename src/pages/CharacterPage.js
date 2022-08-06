@@ -11,7 +11,7 @@ const CharacterPage = () => {
     try {
       const fetchDatas = async () => {
         const response = await axios.get(
-          `https://laetitia-marvel-project.herokuapp.com/character/${characterId}`
+          `https://laetitia-marvel-project.herokuapp.com/comic/${characterId}`
         );
         setData(response.data);
         console.log(response.data);
@@ -24,14 +24,38 @@ const CharacterPage = () => {
   }, [characterId]);
 
   return (
-    <div>
-      <h1>Les comics de ce personnage</h1>
+    <div className="container">
       {isLoading === true ? (
-        <h2>En cours de chargement</h2>
+        <p>En cours de chargement</p>
       ) : (
-        <div>
-          <p>{data.name}</p>
-          <p>{data.description}</p>
+        <div className="pages-container">
+          <div className="title-and-picture">
+            <img
+              src={data.thumbnail.path + "." + data.thumbnail.extension}
+              alt=""
+              className="background-image"
+            />
+            <h1>{data.name}</h1>
+          </div>
+
+          <h2 className="titleOfCharacterPage">Retrouvez le/la dans :</h2>
+          <div className="carousel">
+            {data.comics.map((comic, index) => {
+              return (
+                <div key={index} className="card-character-page">
+                  <div className="image">
+                    <img
+                      src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                      alt=""
+                    />
+                  </div>
+                  <div className="title-and-description">
+                    <h3>{comic.title}</h3>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>

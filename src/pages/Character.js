@@ -44,11 +44,11 @@ const Character = () => {
                   key={characters._id}
                   onClick={(event) => {
                     event.preventDefault();
-                    navigate(`/character/${characters._id}`);
+                    navigate(`/comic/${characters._id}`);
                   }}
                   className="card"
                 >
-                  <p className="image-contain">
+                  <div className="image-contain">
                     <img
                       src={
                         characters.thumbnail.path +
@@ -57,9 +57,9 @@ const Character = () => {
                       }
                       alt="comics photos"
                     />
-                  </p>
+                  </div>
                   <div className="card-text">
-                    <p>{characters.name}</p>
+                    <h2 className="characterName">{characters.name}</h2>
                     <p>{characters.description}</p>
                   </div>
                 </div>
