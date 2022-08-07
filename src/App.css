@@ -213,6 +213,16 @@ p {
     opacity: 0.7;
 }
 
+
+ .comics-card:hover {
+    background-color: inherit;
+    border: 2px solid #CD1426;
+}
+.comics-card {
+    cursor: default;
+}
+
+
 /* Fiche personnage */
 
 
@@ -278,4 +288,6 @@ p {
 
 .carousel::-webkit-scrollbar {
     display: none;
+   
+
   }

@@ -25,7 +25,7 @@ const Comic = () => {
       {isLoading === true ? (
         <h2>En cours de chargement</h2>
       ) : (
-        <div className="pages-container">
+        <div className="pages-container comics-page">
           <div className="search-bar-input">
             <input type="text" placeholder="Search here" />
           </div>
@@ -37,7 +37,7 @@ const Comic = () => {
           <div className="container-card">
             {data.results.map((comics) => {
               return (
-                <div key={comics._id} className="card">
+                <div key={comics._id} className="card comics-card">
                   <p className="image-contain">
                     <img
                       src={
